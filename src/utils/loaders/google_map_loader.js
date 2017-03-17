@@ -2,6 +2,10 @@ let $script_ = null;
 
 let loadPromise_;
 
+if (typeof window.Promise !== 'function') {
+  window.Promise = require('es6-promise').Promise;
+}
+
 let resolveCustomPromise_;
 const _customPromise = new Promise(resolve => {
   resolveCustomPromise_ = resolve;
